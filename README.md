@@ -19,7 +19,7 @@
  - start postgres
   - run -> `docker run --network <networkname> -e POSTGRES_PASSWORD=mypass -d -p 5432:5432 postgres`
  - Build the project
-  - `docker build -t <imagename> .`
+  - `docker build --network=host -t <imagename> .`
   - `docker run -p 3000:3000 <imagename>`
 
 ## Docker Compose Installation
