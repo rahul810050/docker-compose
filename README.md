@@ -17,10 +17,10 @@
  - create a network
   - run `docker network create <networkname>`
  - start postgres
-  - run -> `docker run --network <networkname> -e POSTGRES_PASSWORD=mypass -d -p 5432:5432 postgres`
+  - run -> `docker run --name <name> --network <networkname> -e POSTGRES_PASSWORD=mypass -d -p 5432:5432 postgres`
  - Build the project
   - `docker build --network=host -t <imagename> .`
-  - `docker run -p 3000:3000 <imagename>`
+  - `docker run --network <networkname> -e DATABASE_URL=postgresql://postgres:mypass@<nameofthe_db_container>:5432/postgres -p 3000:3000 <imagename>`
 
 ## Docker Compose Installation
  - docker-compose -f docker-compose.yml up
