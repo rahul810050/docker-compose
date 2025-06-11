@@ -8,7 +8,7 @@ RUN npm install
 
 COPY . .
 
-RUN npx prisma migrate dev --name init
+# RUN npx prisma migrate dev 
 
 RUN npx prisma generate
 
@@ -18,4 +18,4 @@ ENV DATABASE_URL=postgresql://postgres:mypass@localhost:5432/postgres
 
 EXPOSE 3000
 
-CMD ["npm", "run", "start"]
+CMD ["npm", "run", "dev:docker"]
